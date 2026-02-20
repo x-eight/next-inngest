@@ -9,6 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@inngest/realtime": "^0.4.6",
     "dotenv": "^17.2.3",
     "inngest": "^3.44.3",
     "mime": "^3.0.0",

@@ -1,11 +1,14 @@
 import { inngest } from "@/inngest/client";
 
-export async function POST() {
+export async function POST(req: Request) {
+  const body = await req.json().catch(() => ({}));
+  const schemeId: string = body.schemeId || `scheme_${Date.now()}`;
+
   await inngest.send({
     name: "video/process",
     data: {
       scheme: {
-        id: "scheme_demo_123",
+        id: schemeId,
         title: "The Journey to Your Dream Life",
         description:
           "This video inspires viewers to persevere through challenges to achieve their dreams.",
